@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 
@@ -6,6 +7,12 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 
 import RootRoutes from './routes'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { retry: false, refetchOnWindowFocus: false },
+  },
+})
 
 const theme = createTheme({
   typography: {
@@ -40,7 +47,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <RootRoutes />
+      <QueryClientProvider client={queryClient}>
+        <RootRoutes />
+      </QueryClientProvider>
     </ThemeProvider>
   )
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Nasdaq Composite",
+    "change": 451.08,
+    "changeInPercent": 2.61,
+    "value": 17754.09
+  },
+  {
+    "title": "S&P 500",
+    "change": 116.47,
+    "changeInPercent": 2.1,
+    "value": 5638.94
+  },
+  {
+    "title": "Dow Jones Industrial Average",
+    "change": 674.38,
+    "changeInPercent": 1.7,
+    "value": 41488.19
+  }
+]

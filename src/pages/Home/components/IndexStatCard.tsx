@@ -1,4 +1,3 @@
-import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 
 import { Card, CardHeader, CardContent } from '../../../components/ui/base'
@@ -23,11 +22,9 @@ export default function IndexStatCard(props: IndexStatCardProps) {
         slotProps={{ subheader: { sx: { color: isPositive ? 'green' : 'red' } } }}
       />
       <CardContent>
-        <Stack>
-          <Typography variant='h3' align='center'>
-            {value}
-          </Typography>
-        </Stack>
+        <Typography variant='h3' align='center'>
+          {value}
+        </Typography>
       </CardContent>
     </Card>
   )
