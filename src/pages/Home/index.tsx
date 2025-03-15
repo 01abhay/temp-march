@@ -2,6 +2,7 @@ import Stack from '@mui/material/Stack'
 
 import IndexList from './components/IndexList'
 import MarketMovementStats from './components/MarketMovementStats'
+import SectorWiseStatsVisualization from './components/SectorWiseStatsVisualization'
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
       <IndexList />
 
       <MarketMovementStats />
+
+      <SectorWiseStatsVisualization />
     </Stack>
   )
 }

@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Technology",
+    "changePercent": 1.25,
+    "marketCap": 12560000000000,
+    "peRatio": 28.7,
+    "dividendYield": 0.87,
+    "stocks": ["AAPL", "MSFT", "NVDA"]
+  },
+  {
+    "name": "Communication Services",
+    "changePercent": 0.63,
+    "marketCap": 4980000000000,
+    "peRatio": 23.5,
+    "dividendYield": 0.92,
+    "stocks": ["GOOGL", "META"]
+  },
+  {
+    "name": "Consumer Cyclical",
+    "changePercent": -0.82,
+    "marketCap": 3210000000000,
+    "peRatio": 24.9,
+    "dividendYield": 0.65,
+    "stocks": ["AMZN", "TSLA"]
+  },
+  {
+    "name": "Financial Services",
+    "changePercent": 0.42,
+    "marketCap": 3540000000000,
+    "peRatio": 13.2,
+    "dividendYield": 2.34,
+    "stocks": ["JPM"]
+  },
+  {
+    "name": "Healthcare",
+    "changePercent": -0.24,
+    "marketCap": 2870000000000,
+    "peRatio": 17.8,
+    "dividendYield": 2.76,
+    "stocks": ["JNJ"]
+  },
+  {
+    "name": "Consumer Defensive",
+    "changePercent": 0.38,
+    "marketCap": 2150000000000,
+    "peRatio": 22.1,
+    "dividendYield": 2.58,
+    "stocks": ["PG"]
+  },
+  {
+    "name": "Industrials",
+    "changePercent": 0.53,
+    "marketCap": 2340000000000,
+    "peRatio": 19.7,
+    "dividendYield": 1.85,
+    "stocks": []
+  },
+  {
+    "name": "Energy",
+    "changePercent": -1.27,
+    "marketCap": 1870000000000,
+    "peRatio": 12.3,
+    "dividendYield": 3.76,
+    "stocks": []
+  },
+  {
+    "name": "Materials",
+    "changePercent": 0.18,
+    "marketCap": 1430000000000,
+    "peRatio": 16.8,
+    "dividendYield": 2.34,
+    "stocks": []
+  },
+  {
+    "name": "Real Estate",
+    "changePercent": -0.65,
+    "marketCap": 1120000000000,
+    "peRatio": 21.5,
+    "dividendYield": 3.92,
+    "stocks": []
+  }
+]
