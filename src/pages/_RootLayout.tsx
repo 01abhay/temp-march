@@ -26,7 +26,7 @@ export default function RootLayout() {
           <img src={logo} alt='logo' style={{ display: 'block', width: '100%' }} />
         </Box>
 
-        <Stack direction='row' spacing={2}>
+        <Stack direction='row' spacing={{ xs: 1, md: 2 }}>
           {routes.map(route => {
             const isActive = location.pathname === route.path
             const variant = isActive ? 'contained' : 'outlined'
