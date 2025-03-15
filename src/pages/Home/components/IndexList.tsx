@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import Stack from '@mui/material/Stack'
 
 import { getIndices } from '../../../services/api'
-import IndexStatCard from './IndexStatCard'
+import IndexStatCard, { IndexStatCardSkeleton } from './IndexStatCard'
 
 export default function IndexList() {
   const { isPending, data, error } = useQuery({
@@ -10,9 +10,6 @@ export default function IndexList() {
     queryFn: getIndices,
   })
 
-  console.log(data)
-
-  if (isPending) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
   return (
     <Stack
@@ -20,15 +17,17 @@ export default function IndexList() {
       spacing={{ xs: 1, md: 2 }}
       alignItems='flex-start'
       sx={theme => ({ overflowX: 'auto', m: `${theme.spacing(-1)} !important`, p: 1 })}>
-      {data.map(index => (
-        <IndexStatCard
-          key={index.title}
-          title={index.title}
-          change={index.change}
-          changeInPercent={index.changeInPercent}
-          value={index.value}
-        />
-      ))}
+      {isPending
+        ? Array.from({ length: 3 }).map((_, index) => <IndexStatCardSkeleton key={index} />)
+        : data.map(index => (
+            <IndexStatCard
+              key={index.title}
+              title={index.title}
+              change={index.change}
+              changeInPercent={index.changeInPercent}
+              value={index.value}
+            />
+          ))}
     </Stack>
   )
 }

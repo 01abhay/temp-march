@@ -4,6 +4,7 @@ import TableBody from '@mui/material/TableBody'
 import TableRow from '@mui/material/TableRow'
 import TableCell from '@mui/material/TableCell'
 import Typography from '@mui/material/Typography'
+import Skeleton from '@mui/material/Skeleton'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import CachedIcon from '@mui/icons-material/Cached'
@@ -34,7 +35,7 @@ export default function MarketMoversStatCard(props: MarketMoversStatCardProps) {
                     <TableCell component='th'>
                       <Typography variant='body2'>{row.company_name}</Typography>
                       <Typography variant='caption' color='text.secondary'>
-                        {row.volume}
+                        {row.ticker}
                       </Typography>
                     </TableCell>
                     {(type === 'gainers' || type === 'losers') && (
@@ -61,6 +62,32 @@ export default function MarketMoversStatCard(props: MarketMoversStatCardProps) {
                   </TableRow>
                 )
               })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </CardContent>
+    </Card>
+  )
+}
+
+export function MarketMoversStatCardSkeleton() {
+  return (
+    <Card sx={{ flexShrink: 0 }}>
+      <CardHeader title={<Skeleton variant='text' width={160} height={28} />} />
+      <CardContent>
+        <TableContainer>
+          <Table size='small'>
+            <TableBody>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Skeleton variant='text' width={160} height={28} />
+                  </TableCell>
+                  <TableCell>
+                    <Skeleton variant='text' width={80} height={28} />
+                  </TableCell>
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </TableContainer>

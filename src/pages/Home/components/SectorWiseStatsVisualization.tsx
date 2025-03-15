@@ -7,9 +7,9 @@ import data from '../../../data/sector-wise-movement.json'
 export default function SectorWiseStatsVisualization() {
   return (
     <Card>
-      <CardHeader title='Sector Wise Stats Visualization' />
-      <CardContent>
-        <ResponsiveContainer width='100%' height={400}>
+      <CardHeader title='Sector-wise Movement' />
+      <CardContent sx={{ overflowX: 'auto' }}>
+        <ResponsiveContainer width='100%' height={400} minWidth={480}>
           <BarChart data={data} margin={{ left: -24 }}>
             <CartesianGrid strokeDasharray='3 3' />
             <XAxis

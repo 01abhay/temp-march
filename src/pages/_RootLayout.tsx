@@ -16,7 +16,7 @@ export default function RootLayout() {
   const location = useLocation()
 
   return (
-    <Container maxWidth='xl' sx={{ bgcolor: 'grey.100', px: { xs: 1, md: 2 }, pb: 8 }}>
+    <Container maxWidth='xl' sx={{ px: { xs: 1, md: 2 }, pb: 8 }}>
       <Stack
         direction={{ xs: 'column', md: 'row' }}
         spacing={{ xs: 1, md: 2 }}

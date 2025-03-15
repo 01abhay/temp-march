@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import Grid from '@mui/material/Grid2'
 
 import { getMarketMovement } from '../../../services/api'
-import MarketMoversStatCard from './MarketMoversStatCard'
+import MarketMoversStatCard, { MarketMoversStatCardSkeleton } from './MarketMoversStatCard'
 
 export default function MarketMovementStats() {
   const { isPending, data, error } = useQuery({
@@ -10,7 +10,16 @@ export default function MarketMovementStats() {
     queryFn: getMarketMovement,
   })
 
-  if (isPending) return <div>Loading...</div>
+  if (isPending)
+    return (
+      <Grid container spacing={{ xs: 1, md: 2 }}>
+        {Array.from({ length: 3 }).map((_, index) => (
+          <Grid size={{ xs: 12, md: 4 }} key={index}>
+            <MarketMoversStatCardSkeleton />
+          </Grid>
+        ))}
+      </Grid>
+    )
   if (error) return <div>Error: {error.message}</div>
 
   const [topGainers, topLosers, mostActive] = [data.top_gainers, data.top_losers, data.most_actively_traded].map(rows =>
