@@ -4,6 +4,7 @@ import RootLayout from '../pages/_RootLayout'
 import Home from '../pages/Home'
 import Watchlist from '../pages/Watchlist'
 import Screens from '../pages/Screens'
+import Stock from '../pages/Stock'
 
 export default function RootRoutes() {
   return (
@@ -13,6 +14,8 @@ export default function RootRoutes() {
           <Route path='/' element={<Home />} />
           <Route path='/watchlist' element={<Watchlist />} />
           <Route path='/screens' element={<Screens />} />
+
+          <Route path='/stock/:symbol' element={<Stock />} />
         </Route>
       </Routes>
     </BrowserRouter>

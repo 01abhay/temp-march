@@ -2,17 +2,28 @@ import axios from 'axios'
 import { z } from 'zod'
 
 import indices from '../data/indices.json'
-import marketMovements from '../data/market-movement.json'
+import stocks from '../data/stocks.json'
 
 export async function getIndices() {
   await wait(getRandomNumber(1000, 2000))
   return indices
 }
 
-export type MarketMovementResponse = typeof marketMovements
+export type Stock = (typeof stocks)[number]
 export async function getMarketMovement() {
   await wait(getRandomNumber(1000, 2000))
-  return marketMovements
+
+  const topGainers = stocks
+    .filter(stock => stock.change >= 0)
+    .sort((a, b) => b.change - a.change)
+    .slice(0, 5)
+  const topLosers = stocks
+    .filter(stock => stock.change < 0)
+    .sort((a, b) => a.change - b.change)
+    .slice(0, 5)
+  const mostActive = stocks.sort((a, b) => b.volume - a.volume).slice(0, 5)
+
+  return { top_gainers: topGainers, top_losers: topLosers, most_actively_traded: mostActive }
 }
 
 const alphavantageAPI = axios.create({
