@@ -1,0 +1,87 @@
+{
+  "presets": [
+    {
+      "id": 1,
+      "name": "Value Stocks",
+      "description": "Low P/E, high dividend stocks",
+      "criteria": [
+        { "metric": "pe", "operator": "<=", "value": 15 },
+        { "metric": "dividendYield", "operator": ">=", "value": 2 },
+        { "metric": "marketCap", "operator": ">=", "value": 10000000000 }
+      ],
+      "createdAt": "2025-01-10T08:45:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Growth Stocks",
+      "description": "High growth potential stocks",
+      "criteria": [
+        { "metric": "pe", "operator": ">", "value": 20 },
+        { "metric": "beta", "operator": ">=", "value": 1.2 },
+        { "metric": "changePercent", "operator": ">", "value": 0 }
+      ],
+      "createdAt": "2025-02-15T14:30:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Stable Income",
+      "description": "Stable stocks with good dividends",
+      "criteria": [
+        { "metric": "beta", "operator": "<", "value": 1 },
+        { "metric": "dividendYield", "operator": ">=", "value": 1.5 },
+        { "metric": "marketCap", "operator": ">=", "value": 50000000000 }
+      ],
+      "createdAt": "2025-01-28T11:20:00Z"
+    }
+  ],
+  "availableMetrics": [
+    {
+      "id": "currentPrice",
+      "name": "Current Price",
+      "category": "Price",
+      "description": "Current stock price"
+    },
+    {
+      "id": "changePercent",
+      "name": "Change %",
+      "category": "Price",
+      "description": "Daily price change percentage"
+    },
+    {
+      "id": "marketCap",
+      "name": "Market Cap",
+      "category": "Company",
+      "description": "Total market value of company"
+    },
+    {
+      "id": "volume",
+      "name": "Volume",
+      "category": "Trading",
+      "description": "Daily trading volume"
+    },
+    {
+      "id": "pe",
+      "name": "P/E Ratio",
+      "category": "Valuation",
+      "description": "Price to earnings ratio"
+    },
+    {
+      "id": "eps",
+      "name": "EPS",
+      "category": "Financials",
+      "description": "Earnings per share"
+    },
+    {
+      "id": "dividendYield",
+      "name": "Dividend Yield %",
+      "category": "Dividends",
+      "description": "Annual dividend yield percentage"
+    },
+    {
+      "id": "beta",
+      "name": "Beta",
+      "category": "Risk",
+      "description": "Beta coefficient of stock"
+    }
+  ]
+}
