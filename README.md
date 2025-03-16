@@ -1,54 +1,129 @@
-# React + TypeScript + Vite
+# Stock Market Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive stock market data visualization dashboard inspired by Screener.in, built with React, TypeScript, and Material UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Stock Overview Dashboard
 
-## Expanding the ESLint configuration
+- Homepage dashboard showing key market metrics
+- Top gainers, losers, and most active stocks in separate tables
+- Sector-wise performance visualization
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. Stock Detail Page
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Detailed view for individual stocks, Company information section
+- Price chart with adjustable time periods (1D, 1W, 1M, 1Y, 5Y)
+- Key financial ratios visualization (P/E, P/B, ROCE, etc.)
+- Quarterly and annual financial performance trends
+
+### 3. Stock Screener Tool
+
+- Custom stock screener with multiple filter criteria
+- Save and load filter configurations
+- Export results as csv
+
+### 4. Watchlist Management
+
+- Create, read, update, and delete watchlists
+- Drag-and-drop organization
+- Performance metrics for watchlist items
+
+### 5. Responsive Design
+
+- Works well on desktop and mobile devices
+- Appropriate layouts for different screen sizes (Mobile and Desktop)
+
+## Tech Stack
+
+- **Frontend**: React with TypeScript
+- **State Management**: React Query for server state, Zustand for UI state
+- **UI Library**: Material UI
+- **Charting**: Recharts
+- **Routing**: React Router
+- **Form Validation**: Zod
+- **Drag and Drop**: DND Kit
+- **HTTP Client**: Axios
+- **Date Handling**: Day.js
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/01abhay/temp-march
+cd temp-march
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Start the development server
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+### Docker Support
+
+The project includes Docker configuration for easy deployment:
+
+```bash
+docker build -t stock-dashboard .
+docker run -p 80:80 stock-dashboard
+```
+
+## Project Structure
+
+```
+src/
+├── assets/         # Static assets like images
+├── components/     # Reusable UI components
+├── data/           # Mock data for development
+├── pages/          # Page components
+│   ├── Home/       # Dashboard page
+│   ├── Screens/    # Stock screener page
+│   ├── Stock/      # Stock details page
+│   └── Watchlists/ # Watchlists page
+├── routes/         # Routing configuration
+├── services/       # API services
+└── utils/          # Utility functions
+```
+
+## Design Decisions
+
+- **Component Architecture**: Used a modular component approach for better maintainability and reusability
+- **State Management**: Used React Query for server state and Zustand for UI state to optimize performance
+- **Responsive Design**: Implemented responsive design using Material UI's Grid system
+- **Error Handling**: Implemented proper error handling for API calls
+- **Performance Optimization**: Used memoization and lazy loading where appropriate
+
+## Future Improvements
+
+- Add more advanced charting options
+- Enhance mobile experience
+- Implement unit and integration tests
+
+## License
+
+MIT
