@@ -8,7 +8,7 @@ import logo from '../assets/logo.png'
 
 const routes = [
   { label: 'Home', path: '/' },
-  { label: 'Watchlist', path: '/watchlist' },
+  { label: 'Watchlists', path: '/watchlists' },
   { label: 'Screens', path: '/screens' },
 ]
 

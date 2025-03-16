@@ -5,6 +5,7 @@ import indices from '../data/indices.json'
 import stocks from '../data/stocks.json'
 import historicalData from '../data/historical-data.json'
 import financialData from '../data/financial-data.json'
+import watchlists from '../data/watchlists.json'
 
 import { wait, getRandomNumber } from '../utils'
 
@@ -19,6 +20,14 @@ export async function getStock(id: string) {
   const stock = stocks.find(stock => stock.id === id)
   if (!stock) throw new Error(`Stock with id ${id} not found`)
   return stock
+}
+
+export async function getStocks({ symbols }: { symbols?: string[] }) {
+  await wait(getRandomNumber(1000, 2000))
+  let _stocks = stocks
+  if (symbols) _stocks = symbols.map(symbol => stocks.find(stock => stock.id === symbol)).filter(Boolean) as Stock[]
+
+  return _stocks
 }
 
 export async function getHistoricalData(id: string) {
@@ -51,6 +60,46 @@ export async function getMarketMovement() {
   return { top_gainers: topGainers, top_losers: topLosers, most_actively_traded: mostActive }
 }
 
+export type Watchlist = (typeof watchlists)[number]
+export async function getWatchlist() {
+  await wait(getRandomNumber(1000, 2000))
+  let _watchlists = localStorage.getItem('watchlists')
+  if (!_watchlists) localStorage.setItem('watchlists', JSON.stringify(watchlists))
+  _watchlists = localStorage.getItem('watchlists') ?? '[]'
+  return JSON.parse(_watchlists) as typeof watchlists
+}
+
+export async function createWatchlist(name: string) {
+  const watchlists = await getWatchlist()
+  const newWatchlist = { id: Math.random(), name, stocks: [] }
+  localStorage.setItem('watchlists', JSON.stringify([...watchlists, newWatchlist]))
+  return newWatchlist
+}
+
+export async function updateWatchlist(id: number, payload: { name?: string; stocks?: string[] }) {
+  const watchlists = await getWatchlist()
+  const newWatchlists = watchlists.map(watchlist => (watchlist.id === id ? { ...watchlist, ...payload } : watchlist))
+  localStorage.setItem('watchlists', JSON.stringify(newWatchlists))
+  return newWatchlists
+}
+
+export async function addStockToWatchlist(id: number, stock: string) {
+  const watchlists = await getWatchlist()
+  const newWatchlists = watchlists.map(watchlist =>
+    watchlist.id === id ? { ...watchlist, stocks: [...watchlist.stocks, stock] } : watchlist
+  )
+  localStorage.setItem('watchlists', JSON.stringify(newWatchlists))
+  return newWatchlists
+}
+
+export async function deleteWatchlist(id: number) {
+  const watchlists = await getWatchlist()
+  const newWatchlists = watchlists.filter(watchlist => watchlist.id !== id)
+  localStorage.setItem('watchlists', JSON.stringify(newWatchlists))
+  return newWatchlists
+}
+
+// NOTE: this is not used in the project due to limited API availability in free tier, but it's here for reference
 const alphavantageAPI = axios.create({
   baseURL: 'https://www.alphavantage.co/query',
   params: { apikey: import.meta.env.VITE_ALPHA_VANTAGE_API_KEY },
