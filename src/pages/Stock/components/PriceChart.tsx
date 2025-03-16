@@ -6,6 +6,7 @@ import ButtonGroup from '@mui/material/ButtonGroup'
 import Button from '@mui/material/Button'
 
 import { getHistoricalData } from '../../../services/api'
+import { formatCurrency } from '../../../utils'
 import { Card, CardHeader, CardContent } from '../../../components/ui/base'
 
 const frequencyOptions = ['1w', '1m', '1y', '5y'] as const
@@ -18,6 +19,7 @@ export function PriceChart({ symbol }: { symbol: string }) {
   const { isPending, data, error } = useQuery({
     queryKey: ['historical-data', symbol],
     queryFn: () => getHistoricalData(symbol),
+    // TODO: add and use PE ratio historical data
   })
 
   if (isPending) return <div>Loading...</div>
@@ -50,8 +52,8 @@ export function PriceChart({ symbol }: { symbol: string }) {
               height={80}
               tickFormatter={date => dayjs(date).format(freqToDateFormatter[frequency])}
             />
-            <YAxis domain={['low', 'high']} />
-            <Tooltip />
+            <YAxis domain={['low', 'high']} width={66} tickFormatter={formatCurrency} />
+            <Tooltip formatter={formatCurrency} />
             <Line type='monotone' dataKey='close' stroke='#8884d8' />
           </LineChart>
         </ResponsiveContainer>

@@ -4,6 +4,9 @@ import { z } from 'zod'
 import indices from '../data/indices.json'
 import stocks from '../data/stocks.json'
 import historicalData from '../data/historical-data.json'
+import financialData from '../data/financial-data.json'
+
+import { wait, getRandomNumber } from '../utils'
 
 export async function getIndices() {
   await wait(getRandomNumber(1000, 2000))
@@ -22,6 +25,13 @@ export async function getHistoricalData(id: string) {
   await wait(getRandomNumber(1000, 2000))
   const data = historicalData[id as keyof typeof historicalData]
   if (!data) throw new Error(`Historical data for stock ${id} not found`)
+  return data
+}
+
+export async function getFinancialData(id: string) {
+  await wait(getRandomNumber(1000, 2000))
+  const data = financialData[id as keyof typeof financialData]
+  if (!data) throw new Error(`Financial data for stock ${id} not found`)
   return data
 }
 
@@ -51,8 +61,3 @@ export type CompanyOverviewSchema = z.infer<typeof companyOverviewSchema>
 export async function getCompanyOverview(symbol: string) {
   return alphavantageAPI.get('/OVERVIEW', { params: { symbol } }).then(res => companyOverviewSchema.parse(res.data))
 }
-
-// utils
-const getRandomNumber = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min
-
-const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))

@@ -1,0 +1,234 @@
+{
+  "AAPL": {
+    "quarterly": [
+      {
+        "date": "2024-12-31",
+        "revenue": 119688000000,
+        "netIncome": 33916000000,
+        "eps": 2.18,
+        "operatingCashFlow": 39669000000,
+        "freeCashFlow": 36142000000
+      },
+      {
+        "date": "2024-09-30",
+        "revenue": 89516000000,
+        "netIncome": 23005000000,
+        "eps": 1.47,
+        "operatingCashFlow": 29785000000,
+        "freeCashFlow": 26301000000
+      },
+      {
+        "date": "2024-06-30",
+        "revenue": 81797000000,
+        "netIncome": 21742000000,
+        "eps": 1.39,
+        "operatingCashFlow": 26542000000,
+        "freeCashFlow": 23145000000
+      },
+      {
+        "date": "2024-03-31",
+        "revenue": 90146000000,
+        "netIncome": 23643000000,
+        "eps": 1.52,
+        "operatingCashFlow": 28647000000,
+        "freeCashFlow": 25387000000
+      },
+      {
+        "date": "2023-12-31",
+        "revenue": 117154000000,
+        "netIncome": 33926000000,
+        "eps": 2.18,
+        "operatingCashFlow": 39162000000,
+        "freeCashFlow": 36018000000
+      }
+    ],
+    "annual": [
+      {
+        "year": 2024,
+        "revenue": 383380000000,
+        "netIncome": 99924000000,
+        "eps": 6.35,
+        "operatingCashFlow": 119823000000,
+        "freeCashFlow": 109634000000,
+        "totalAssets": 385730000000,
+        "totalLiabilities": 287456000000,
+        "totalEquity": 98274000000,
+        "debtToEquity": 1.65,
+        "returnOnEquity": 0.67,
+        "returnOnAssets": 0.17
+      },
+      {
+        "year": 2023,
+        "revenue": 383292000000,
+        "netIncome": 97098000000,
+        "eps": 6.13,
+        "operatingCashFlow": 118359000000,
+        "freeCashFlow": 109289000000,
+        "totalAssets": 375319000000,
+        "totalLiabilities": 279872000000,
+        "totalEquity": 95447000000,
+        "debtToEquity": 1.69,
+        "returnOnEquity": 0.66,
+        "returnOnAssets": 0.16
+      },
+      {
+        "year": 2022,
+        "revenue": 394328000000,
+        "netIncome": 99803000000,
+        "eps": 6.05,
+        "operatingCashFlow": 122151000000,
+        "freeCashFlow": 111443000000,
+        "totalAssets": 352755000000,
+        "totalLiabilities": 261485000000,
+        "totalEquity": 91270000000,
+        "debtToEquity": 1.73,
+        "returnOnEquity": 0.76,
+        "returnOnAssets": 0.19
+      },
+      {
+        "year": 2021,
+        "revenue": 365817000000,
+        "netIncome": 94680000000,
+        "eps": 5.61,
+        "operatingCashFlow": 104038000000,
+        "freeCashFlow": 92953000000,
+        "totalAssets": 351002000000,
+        "totalLiabilities": 287912000000,
+        "totalEquity": 63090000000,
+        "debtToEquity": 2.19,
+        "returnOnEquity": 1.5,
+        "returnOnAssets": 0.24
+      },
+      {
+        "year": 2020,
+        "revenue": 274515000000,
+        "netIncome": 57411000000,
+        "eps": 3.28,
+        "operatingCashFlow": 80674000000,
+        "freeCashFlow": 73365000000,
+        "totalAssets": 323888000000,
+        "totalLiabilities": 258549000000,
+        "totalEquity": 65339000000,
+        "debtToEquity": 1.76,
+        "returnOnEquity": 0.88,
+        "returnOnAssets": 0.17
+      }
+    ]
+  },
+  "MSFT": {
+    "quarterly": [
+      {
+        "date": "2024-12-31",
+        "revenue": 62020000000,
+        "netIncome": 21870000000,
+        "eps": 2.93,
+        "operatingCashFlow": 27051000000,
+        "freeCashFlow": 21543000000
+      },
+      {
+        "date": "2024-09-30",
+        "revenue": 56521000000,
+        "netIncome": 20831000000,
+        "eps": 2.79,
+        "operatingCashFlow": 25182000000,
+        "freeCashFlow": 17987000000
+      },
+      {
+        "date": "2024-06-30",
+        "revenue": 59685000000,
+        "netIncome": 22283000000,
+        "eps": 2.99,
+        "operatingCashFlow": 30079000000,
+        "freeCashFlow": 22324000000
+      },
+      {
+        "date": "2024-03-31",
+        "revenue": 56195000000,
+        "netIncome": 21945000000,
+        "eps": 2.94,
+        "operatingCashFlow": 27547000000,
+        "freeCashFlow": 20438000000
+      },
+      {
+        "date": "2023-12-31",
+        "revenue": 52747000000,
+        "netIncome": 21868000000,
+        "eps": 2.93,
+        "operatingCashFlow": 16284000000,
+        "freeCashFlow": 11016000000
+      }
+    ],
+    "annual": [
+      {
+        "year": 2024,
+        "revenue": 227636000000,
+        "netIncome": 83386000000,
+        "eps": 11.17,
+        "operatingCashFlow": 110430000000,
+        "freeCashFlow": 82292000000,
+        "totalAssets": 417626000000,
+        "totalLiabilities": 192915000000,
+        "totalEquity": 224711000000,
+        "debtToEquity": 0.39,
+        "returnOnEquity": 0.37,
+        "returnOnAssets": 0.21
+      },
+      {
+        "year": 2023,
+        "revenue": 211915000000,
+        "netIncome": 72361000000,
+        "eps": 9.68,
+        "operatingCashFlow": 87985000000,
+        "freeCashFlow": 59478000000,
+        "totalAssets": 364840000000,
+        "totalLiabilities": 165188000000,
+        "totalEquity": 199652000000,
+        "debtToEquity": 0.41,
+        "returnOnEquity": 0.39,
+        "returnOnAssets": 0.21
+      },
+      {
+        "year": 2022,
+        "revenue": 198270000000,
+        "netIncome": 72738000000,
+        "eps": 9.65,
+        "operatingCashFlow": 89035000000,
+        "freeCashFlow": 65149000000,
+        "totalAssets": 364840000000,
+        "totalLiabilities": 169829000000,
+        "totalEquity": 166542000000,
+        "debtToEquity": 0.39,
+        "returnOnEquity": 0.47,
+        "returnOnAssets": 0.21
+      },
+      {
+        "year": 2021,
+        "revenue": 168088000000,
+        "netIncome": 61271000000,
+        "eps": 8.05,
+        "operatingCashFlow": 76740000000,
+        "freeCashFlow": 56118000000,
+        "totalAssets": 333779000000,
+        "totalLiabilities": 155249000000,
+        "totalEquity": 141988000000,
+        "debtToEquity": 0.41,
+        "returnOnEquity": 0.47,
+        "returnOnAssets": 0.2
+      },
+      {
+        "year": 2020,
+        "revenue": 143015000000,
+        "netIncome": 44281000000,
+        "eps": 5.76,
+        "operatingCashFlow": 60675000000,
+        "freeCashFlow": 45234000000,
+        "totalAssets": 301311000000,
+        "totalLiabilities": 132800000000,
+        "totalEquity": 118304000000,
+        "debtToEquity": 0.41,
+        "returnOnEquity": 0.4,
+        "returnOnAssets": 0.15
+      }
+    ]
+  }
+}

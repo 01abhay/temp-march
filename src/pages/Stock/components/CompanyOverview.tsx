@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography'
 import CorporateFareIcon from '@mui/icons-material/CorporateFare'
 
 import type { Stock } from '../../../services/api'
+import { formatCurrency } from '../../../utils'
 import { Card, CardHeader, CardContent } from '../../../components/ui/base'
 
 export function CompanyOverview({ data }: { data: Stock }) {
@@ -12,9 +13,9 @@ export function CompanyOverview({ data }: { data: Stock }) {
       <CardHeader avatar={<CorporateFareIcon />} title={data.name} subheader={data.industry} />
       <CardContent>
         <Stack direction='row' spacing={2} alignItems='flex-end'>
-          <Typography variant='h2'>{data.currentPrice}</Typography>
+          <Typography variant='h2'>{formatCurrency(data.currentPrice)}</Typography>
           <Typography variant='caption' color={data.change >= 0 ? 'success' : 'error'}>
-            {data.change} ({data.changePercent.toFixed(2)}%)
+            {formatCurrency(data.change)} ({data.changePercent.toFixed(2)}%)
           </Typography>
         </Stack>
 
@@ -24,10 +25,9 @@ export function CompanyOverview({ data }: { data: Stock }) {
 
         <Grid container spacing={2}>
           {[
-            { label: 'Market Cap', value: data.marketCap },
+            { label: 'Market Cap', value: formatCurrency(data.marketCap) },
             { label: 'PE Ratio', value: data.pe },
-            { label: '52 Week Range', value: `${data.yearLow} - ${data.yearHigh}` },
-            { label: 'Volume', value: data.volume },
+            { label: '52 Week Range', value: `${formatCurrency(data.yearLow)} - ${formatCurrency(data.yearHigh)}` },
           ].map(item => (
             <Grid size={{ xs: 12, md: 4 }} key={item.label}>
               <Stack direction='row' alignItems='center' justifyContent='space-between'>
